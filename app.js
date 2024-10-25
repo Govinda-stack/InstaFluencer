@@ -20,7 +20,7 @@ con.connect((err) => {//connect to database
 
 var app = express()
 var http = require('http').createServer(app);
-var io = require('socket.io')(http, {
+var io = require('socket.io')(http, {// create socket IO connection
         cors: {
             origin: "*"
           }
@@ -42,6 +42,9 @@ const query = util.promisify(con.query).bind(con);//asynchronous queries
 //         origin: "*"
 //     }
 // });
+app.get('/', (req, res) => {
+    res.end('Server is working');
+});
 
 realTimeChat(io, query)
 users(app, query)
