@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: nodejs-server
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: SERVER_PORT
+        value: "3000"
