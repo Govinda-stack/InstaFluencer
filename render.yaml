@@ -6,6 +6,3 @@ services:
     startCommand: npm start
     healthCheckPath: /
     autoDeploy: true
-    envVars:
-      - key: SERVER_PORT
-        value: "3000"
