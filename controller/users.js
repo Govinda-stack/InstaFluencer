@@ -12,7 +12,7 @@ module.exports = (app, query) => {
             if (token === "xxxx"){
                 var [user1, user2] = [ req.body.user1, req.body.user2]
             }else{
-                const { data } = await functions.getAuth(token)//authorize the user
+                const { data } = await functions.getAuth(token)
                 var [user1, user2] = [ data.data.id, req.body.user2]
             }
             if (!user1 || !user2){
